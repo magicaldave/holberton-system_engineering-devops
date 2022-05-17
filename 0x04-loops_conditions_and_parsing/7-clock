@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+h="0"
+while [ "$h" -le "12" ]
+      do printf "Hour: %s\n" $h
+      	 printf "%s\n" {1..59}
+	 ((h++))
+done
