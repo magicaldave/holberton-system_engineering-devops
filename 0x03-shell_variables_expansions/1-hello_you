@@ -1,2 +1,2 @@
 #!/bin/bash
-printf "hello $USER\n"
+yes please gimme dem muffins
