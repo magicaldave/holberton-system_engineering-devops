@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 # I added a comment here for test purposes
-for i in "$(ls -1)"
-    do ls -1 | cut -d "-" -f 2
+for i in $(ls ./ | cut -d "-" -f 2)
+    do printf "%s\n" "$i"
 done
