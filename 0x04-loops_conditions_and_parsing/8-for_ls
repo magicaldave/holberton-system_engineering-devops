@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# I added a comment here for test purposes
+# This lists a directory's contents, then removes the leading #-
+i=0
 for i in $(ls ./ | cut -d "-" -f 2)
     do printf "%s\n" "$i"
 done
