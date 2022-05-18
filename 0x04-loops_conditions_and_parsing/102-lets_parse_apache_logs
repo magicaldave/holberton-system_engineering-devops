@@ -6,4 +6,4 @@ then
 else    
     wget http://intranet-projects-files.s3.amazonaws.com/holbertonschool-sysadmin_devops/80/apache-access.log
 fi
-cat apache-access.log | awk '{print $1, $9}'
+awk '{print $1, $9}' apache-access.log
