@@ -9,7 +9,7 @@ trap 'echo "I hate the kill command"; rmndip' SIGTERM
 trap 'echo "Y U no love me?!"' SIGINT
 trap 'rmndip' SIGQUIT
 
-echo "$$"  > /var/run/my.pid
+echo "$$"  > /var/run/myscript.pid
 
 while BUZZLIGHTYEAR="To infinity and beyond"
         do echo "$BUZZLIGHTYEAR"
