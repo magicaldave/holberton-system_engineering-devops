@@ -1,10 +1,17 @@
 #!/usr/bin/env bash
 # This script is an endless loop which prints "to infinity and beyond" every 2s
-echo $$  > /var/run/my.pid
-trap 'echo "I hate the kill command"; rm -rf /var/run/my.pid; exit' SIGTERM
+rmndip () {
+    rm -rf /var/run/myscript.pid
+    exit
+}
+
+trap 'echo "I hate the kill command"; rmndip' SIGTERM
 trap 'echo "Y U no LOVE ME?!"' SIGINT
-trap 'rm -rf /var/run/my.pid; exit' SIGQUIT
+trap 'rmndip' SIGQUIT
+
+echo "$$"  > /var/run/my.pid
+
 while BUZZLIGHTYEAR="To infinity and beyond"
-do printf "%s\n" "$BUZZLIGHTYEAR"
-   sleep 2
+        do echo "$BUZZLIGHTYEAR"
+           sleep 2
 done
