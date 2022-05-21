@@ -5,13 +5,13 @@ rmndip () {
     exit
 }
 
-trap 'echo "I hate the kill command"; rmndip' SIGTERM
-trap 'echo "Y U no love me?!"' SIGINT
-trap 'rmndip' SIGQUIT
+trap 'echo "I hate the kill command"; rmndip' 15
+trap 'echo "Y U no love me?!"' 2
+trap 'rmndip' 3
 
 echo "$$"  > /var/run/myscript.pid
 
-while BUZZLIGHTYEAR="To infinity and beyond"
-        do echo "$BUZZLIGHTYEAR"
+while true
+        do echo "To infinity and beyond"
            sleep 2
 done
