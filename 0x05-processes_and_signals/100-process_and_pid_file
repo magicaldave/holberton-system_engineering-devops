@@ -6,7 +6,7 @@ rmndip () {
 }
 
 trap 'echo "I hate the kill command"; rmndip' SIGTERM
-trap 'echo "Y U no LOVE ME?!"' SIGINT
+trap 'echo "Y U no love me?!"' SIGINT
 trap 'rmndip' SIGQUIT
 
 echo "$$"  > /var/run/my.pid
