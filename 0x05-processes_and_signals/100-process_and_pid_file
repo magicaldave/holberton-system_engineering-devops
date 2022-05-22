@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # This script is an endless loop which prints "to infinity and beyond" every 2s
 indatrap_quit () {
-    rm -rf /var/run/my.pid
+    rm -rf /var/run/myscript.pid
     kill -s KILL "$$"
 }
 indatrap_int () {
@@ -9,14 +9,14 @@ indatrap_int () {
 }
 indatrap_term () {
     echo "I hate the kill command"
-    rm -rf /var/run/my.pid
+    rm -rf /var/run/myscript.pid
     kill -s KILL "$$"
 }
 trap 'indatrap_term' TERM
 trap 'indatrap_int' INT
 trap 'indatrap_quit' QUIT
 
-echo "$$"  > /var/run/my.pid
+echo "$$"  > /var/run/myscript.pid
 
 while true
 do echo "To infinity and beyond"
