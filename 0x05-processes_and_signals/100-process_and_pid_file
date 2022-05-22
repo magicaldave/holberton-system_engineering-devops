@@ -2,7 +2,8 @@
 # This script is an endless loop which prints "to infinity and beyond" every 2s
 indatrap_quit () {
     rm -rf /var/run/myscript.pid
-    kill -s KILL "$$"
+    exit 1
+#    kill -s KILL "$$"
 }
 indatrap_int () {
     echo "Y U no love me?!"
@@ -10,7 +11,8 @@ indatrap_int () {
 indatrap_term () {
     echo "I hate the kill command"
     rm -rf /var/run/myscript.pid
-    kill -s KILL "$$"
+    exit 1
+    #kill -s KILL "$$"
 }
 trap 'indatrap_term' TERM
 trap 'indatrap_int' INT
