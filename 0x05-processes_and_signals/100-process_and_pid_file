@@ -1,13 +1,21 @@
 #!/usr/bin/env bash
 # This script is an endless loop which prints "to infinity and beyond" every 2s
-rmndip () {
+indatrap_quit () {
+    rm -rf /var/run/myscript.pid
+    exit
+}
+indatrap_int () {
+    echo "Y U no love me?!"
+}
+indatrap_term () {
+    echo "I hate the kill command"
     rm -rf /var/run/myscript.pid
     exit
 }
 
-trap 'echo "I hate the kill command"; rmndip' 15
-trap 'echo "Y U no love me?!"' 2
-trap 'rmndip' 3
+trap 'indatrap_term' TERM
+trap 'indatrap_int' INT
+trap 'indatrap_quit' QUIT
 
 echo "$$"  > /var/run/myscript.pid
 
