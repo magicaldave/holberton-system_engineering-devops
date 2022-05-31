@@ -15,7 +15,7 @@ int main(void)
 	fork() && fork() || fork();
 	int pid = fork();
 
-        if (pid == 0)
+	if (pid == 0)
 	{
 		printf("Zombie process created, PID: %d\n", getpid());
 		exit(0);
