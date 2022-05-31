@@ -13,8 +13,13 @@ int infinite_while(void);
 int main(void)
 {
 	fork() && fork() || fork();
-	if (fork() == 0)
+	int pid = fork();
+
+        if (pid == 0)
+	{
 		printf("Zombie process created, PID: %d\n", getpid());
+		exit(0);
+	}
 	infinite_while();
 }
 /**
